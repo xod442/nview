@@ -1,0 +1,53 @@
+
+{% extends "base.html" %}
+
+{% include "navbar2.html" %}
+
+{% block content %}
+<!-- page title area end -->
+
+<div class="col-lg-12">
+    <!-- seo fact area start -->
+      <div class="card">
+            <div class="card-body"
+            <h2 class="header-title">Volumes & Snaps</h2>
+                  <div class="data-tables datatable-dark">
+                        <table id="dataTable" class="table table-stripped">
+                              <thead class="text-capitalize">
+                                  <tr>
+                                      <th>Name</th>
+                                      <th>Snap</th>
+                                      <th>Snap</th>
+                                      <th>Snap</th>
+                                      <th>Snap</th>
+                                      <th>Snap</th>
+                                      <th>Snap</th>
+                                      <th>Snap</th>
+                                      <th></th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                     {% for vol in volz %}
+                                      <tr>
+                                          <td>{{vol[0]}}</td>
+                                          <td>{{vol[1]}}</td>
+                                          <td>{{vol[2]}}</td>
+                                          <td>{{vol[3]}}</td>
+                                          <td>{{vol[4]}}</td>
+                                          <td>{{vol[5]}}</td>
+                                          <td>{{vol[6]}}</td>
+                                          <td>{{vol[7]}}</td>
+                                          <td></td>
+
+
+                                       {% endfor %}
+                                  </tbody>
+                          </table>
+
+                </div>
+        </div>
+
+  </div>
+</div>
+
+{% endblock %}

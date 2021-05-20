@@ -1,0 +1,68 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- login area start -->
+    <div class="login-area" style="background-image: url({{ url_for('static', filename='assets/metal.jpg') }});">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form method="POST" action="{{ url_for('main_app.main_load')}}">
+                    <div class="login-form-head">
+                        <h4>N-View</h4>
+                        <p>Hello there, Sign in and start you session</p>
+                    </div>
+                    <div class="login-form-body">
+                      <div>
+                          <label >User Name</label>
+                          <input
+                            name="username"
+                            type="text"
+                            class="form-control validate"
+                            required
+                          >
+                          <i class="ti-user"></i>
+                          <div class="text-danger"></div>
+                      </div>
+                      <div>
+                          <label>Host IP</label>
+                          <input
+                            name="hostip"
+                            type="text"
+                            class="form-control validate"
+                            required
+                          >
+                          <i class="ti-world"></i>
+                          <div class="text-danger"></div>
+                      </div>
+                        <div>
+                            <label>Password</label>
+                            <input
+                              name="password"
+                              type="password"
+                              class="form-control validate"
+                              required
+                            >
+                            <i class="ti-lock"></i>
+                            <div class="text-danger"></div>
+                        </div>
+
+                        <div class="submit-btn-area">
+                            <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- login area end -->
+  {% endblock %}

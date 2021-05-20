@@ -1,0 +1,8 @@
+version: '2'
+services:
+  paw:
+    build: .
+    ports:
+      - "8080:5001"
+    volumes:
+      - /opt/nview:/opt/nview

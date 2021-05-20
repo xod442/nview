@@ -1,0 +1,46 @@
+
+{% extends "base.html" %}
+
+{% include "navbar2.html" %}
+
+{% block content %}
+<!-- basic form start -->
+<div class="col-12 mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="header-title">Volume Information</h4>
+            <form action = "{{ url_for('menu_app.create_vol') }}" method = "POST">
+
+                <div class="form-row align-items-center">
+
+
+                    <div class="col-sm-2 my-1">
+
+                        <input type="text" name="name" class="form-control"  placeholder="Volume Name">
+
+                    </div>
+
+                    <div class="col-sm-2 my-1">
+
+                        <div class="input-group">
+                            <input type="text" name="size" class="form-control" placeholder="Size (50)">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2 my-1">
+
+                        <div class="input-group">
+                            <input type="text" name="limit_iops" class="form-control" placeholder="Limit IOPS (12000)">
+                        </div>
+                    </div>
+
+                    <div class="col-auto my-1">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- basic form end -->
+{% endblock %}

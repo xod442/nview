@@ -1,0 +1,57 @@
+
+{% extends "base.html" %}
+
+{% include "navbar2.html" %}
+
+{% block content %}
+<!-- page title area end -->
+
+  <h1> System Log </h1>
+  <div class="col-lg-12">
+
+        <div class="card">
+              <div class="card-body"
+              <h2 class="header-title">Logs</h2>
+                    <div class="data-tables datatable-dark">
+                          <table  id="dataTable" class="table table-stripped">
+                                <thead class="text-capitalize">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Name</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                        <th>User Name</th>
+                                        <th>Error Code</th>
+                                        <th>Source IP</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                      {% for l in logz %}
+                                        <tr>
+                                            <td>{{l[0]}}</td>
+                                            <td>{{l[1]}}</td>
+                                            <td>{{l[2]}}</td>
+                                            <td>{{l[3]}}</td>
+                                            <td>{{l[4]}}</td>
+                                            <td>{{l[5]}}</td>
+                                            <td>{{l[6]}}</td>
+                                            <td></td>
+                                        </tr>
+                                       {% endfor %}
+                                    </tbody>
+                            </table>
+
+                  </div>
+          </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

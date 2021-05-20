@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+
+{% include "navbar2.html" %}
+
+{% block content %}
+<!-- page title area end -->
+
+
+
+<!---------------------------Start Charts---------------------------------------->
+
+<div class="col-lg-6">
+    <div class="card">
+        <div class="card-body pb-1">
+            <h4 class="header-title">Event Count</h4>
+              <div id="chartdiv" style="height: 200px;"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+  var chartData = {{chartData|safe}};
+</script>
+
+
+
+
+{% endblock %}

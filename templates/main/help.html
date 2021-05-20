@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Help{% endblock %}
+
+{% block content %}
+
+{% include "navbar_leaf2.html" %}
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+
+<ul class="flashes">
+    {% for message in messages %}
+    <p style=  "color:#ff0000;">
+    <li>{{ message}}</li>
+    {% endfor %}
+
+</ul>
+
+{% endif %}
+
+{% endwith %}
+
+<div class="col-xs-10">
+    <h1>Help </h1>
+    <p> Leaf help information</p>
+    <h3>Everything starts with the Inventory</h3>
+    <p>
+    <h3> Assumptions </h3>
+    <p> The switches supported currently are ones that utilize BGP un-numbered interfaces.</p>
+
+    <p>The names of the leaf hosts follows the format of (POD name).(switch_role). EX. pod2.spine01
+      The hostnames, on the devices themselves, the host name MUST match the leaf host name. EX pod2.spine01.
+      ANY CHANGE TO THIS WILL CAUSE THIS APPLICATION TO FAIL!!!!!!<p>
+
+
+      <p>Leaf is a mongo database used for managing variables, playbooks, inventoryand templates for managing spine/leaf networks
+        with Ansible.
+      The fields in the database hold the minimal variables needed to spawn all the information needed be managed by ansible.
+      After performing the <b>Zero Thouch</b> operation, the switches will be ready for ansible-playbooks.<br><hr>
+
+      Using a zero touch provisioning <b>techops</b> process with a Linux host configured with DHCP option 67 truly provides for no touch (of the switch!).<br><hr>
+
+      Switches load a python file and execute it locally and create the basic configuration
+      necessary for Ansible management.<br>
+
+      Once the ZTP process has ran, the switches are ready to be managed by the playbooks used with this program.<br><hr>
+
+      <b>Current Behavior</b><br>
+
+      This application uses "SEED" variables. You enter the seed IP addresses and the system will generate
+      all the ALL.YAML variables required for the Jinja2 templates.
+
+      At this release the primary fileds are as follows.<br><hr>
+
+      <b>POD</b>
+      <p> The name of the POD. Used to track different data center installations. (POD1, DC2-POD2, etc)</p><br>
+
+      <b>Router ID</b>
+      <p> Seed address for router id's  </p><br>
+
+  </div>
+
+</div>
+{% endblock %}

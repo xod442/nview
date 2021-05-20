@@ -1,0 +1,5 @@
+wheel
+Flask==0.11
+Flask-Script==2.0.5
+Flask-WTF
+requests

@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+
+{% include "navbar2.html" %}
+
+{% block content %}
+<!-- basic form start -->
+<div class="col-12">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="header-title">Select Volume Name To Clone</h4>
+            <form action = "{{ url_for('menu_app.create_clone') }}" method = "POST">
+
+              <div class="form-group">
+                <label for="sel1">Select list:</label>
+                <select class="form-control" style=" height:50px;" name="name" id="sel1">
+                  {% for v in volz %}
+                    <option value={{v}}>{{v}}</option>
+                    {% endfor %}
+                </select>
+             </div>
+             <div class="col-12">
+               <button type="submit" class="btn btn-primary btn-block text-uppercase">Clone Away!</button>
+             </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- basic form end -->
+{% endblock %}

@@ -1,0 +1,66 @@
+
+{% extends "base.html" %}
+
+{% include "navbar2.html" %}
+
+{% block content %}
+<!-- page title area end -->
+<div class="col-lg-12">
+  <h1> System Events </h1>
+</div>
+  <div class="col-lg-6">
+      <div class="card">
+          <div class="card-body pb-1">
+              <h4 class="header-title">Event Count</h4>
+                <div id="chartdiv" style="height: 200px;"></div>
+          </div>
+      </div>
+  </div>
+<form action = "{{ url_for('main_app.main_load') }}" method = "get">
+  <div class="col-lg-12">
+
+        <div class="card">
+              <div class="card-body"
+              <h2 class="header-title">Events</h2>
+              {{dude}}
+                    <div class="data-tables datatable-dark">
+                          <table  id="dataTable" class="table table-stripped">
+                                <thead class="text-capitalize">
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Time</th>
+                                        <th>Severity</th>
+                                        <th>Summary</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                      {% for e in eventz %}
+                                        <tr>
+                                            <td>{{e[0]}}</td>
+                                            <td>{{e[1]}}</td>
+                                            <td>{{e[2]}}</td>
+                                            <td>{{e[3]}}</td>
+                                            <td></td>
+                                        </tr>
+                                       {% endfor %}
+                                    </tbody>
+                            </table>
+
+                  </div>
+          </div>
+
+    </div>
+</div>
+<div class="col-12">
+  <button type="submit" class="btn btn-primary btn-block text-uppercase">Return Main Menu</button>
+</div>
+
+<script>
+  var chartData = {{chartData|safe}};
+</script>
+
+
+
+
+{% endblock %}

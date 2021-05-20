@@ -1,0 +1,116 @@
+AmCharts.makeChart("chartdiv2",{
+"type"    : "pie",
+"titleField"  : "category",
+"valueField"  : "column-1",
+"dataProvider"  : [
+{
+"category": "category 1",
+"column-1": 8
+},
+{
+"category": "category 2",
+"column-1": 6
+},
+{
+"category": "category 3",
+"column-1": 2
+}
+]
+});
+
+
+
+{
+   "type": "pie",
+   "radius": 100,
+   "fontSize": 14
+ }
+
+
+AmCharts.makeChart("chartdiv2",
+        {
+        "type": "pie",
+        "pathToImages": "classes/amcharts/images/",
+        "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+        "titleField": "type",
+        "valueField": "number",
+        "fontSize": 14,
+        "radius": 100,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginBottom": 10,
+        "marginTop": 10,
+        "autoMargins": false,
+        "theme": "light",
+        "allLabels": [],
+        "balloon": {},
+        "titles": [
+        {
+            "text": "Issue Statistics",
+            "size": 18
+        }
+        ],
+        "dataProvider": [
+        {
+        "type": "Open",
+        "number": op
+        },
+        {
+        "type": "Closed",
+        "number": cl
+        },
+        {
+        "type": "Deferred",
+        "number": df
+        },
+        {
+        "type": "Vendor",
+        "number": ve
+        },
+        {
+        "type": "FAQ",
+        "number": fq
+        },
+    ]
+    }
+);
+
+
+
+
+<!--------------------------Start Alarms-------------------------------->
+
+  <div class="col-lg-12">
+
+        <div class="card">
+              <div class="card-body"
+              <h2 class="header-title">Events</h2>
+                    <div class="data-tables datatable-dark">
+                          <table  id="dataTable" class="table table-stripped">
+                                <thead class="text-capitalize">
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Time</th>
+                                        <th>Severity</th>
+                                        <th>Summary</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                      {% for e in events %}
+                                        <tr>
+                                            <td>{{e[0]}}</td>
+                                            <td>{{e[1]}}</td>
+                                            <td>{{e[2]}}</td>
+                                            <td>{{e[3]}}</td>
+                                            <td></td>
+                                        </tr>
+                                       {% endfor %}
+                                    </tbody>
+                            </table>
+
+                  </div>
+          </div>
+
+    </div>
+</div>

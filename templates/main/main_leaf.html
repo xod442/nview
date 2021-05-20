@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+
+{% block title %}Welcome to Paw Console{% endblock %}
+
+{% block header %}<link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">{% endblock %}
+
+{% block content %}
+
+
+
+<div style="padding-left:16px">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="container">
+
+        <h1>PAW</h1>
+        <img src="{{ url_for('static', filename='assets/pets.png') }}" width="600"  heights="90" />
+        <h2>Managing Pets and Stores</h2>
+        <p>A tool for working with a pet database and store locations</p>
+        Version 0.1.0
+        {% include "navbar_leaf2.html" %}
+      </div>
+
+
+{% endblock %}

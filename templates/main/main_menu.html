@@ -1,0 +1,118 @@
+
+{% extends "base.html" %}
+
+{% include "navbar2.html" %}
+
+{% block content %}
+<!-- page title area end -->
+
+
+    <div class="col-lg-12">
+        <!-- seo fact area start -->
+          <div class="card">
+                <div class="card-body"
+                <h2 class="header-title">System</h2>
+                      <div class="data-tables datatable-dark">
+                            <table  class="table table-stripped">
+                                  <thead class="text-capitalize">
+                                      <tr>
+                                          <th>Name</th>
+                                          <th>Version</th>
+                                          <th>Serial</th>
+                                          <th>Role</th>
+                                          <th>NICS</th>
+                                          <th>Model</th>
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td>{{inventory[5]}}</td>
+                                              <td>{{inventory[0]}}</td>
+                                              <td>{{inventory[2]}}</td>
+                                              <td>{{inventory[3]}}</td>
+                                              <td>{{inventory[4]}}</td>
+                                              <td>{{inventory[1]}}</td>
+                                          </tr>
+                                      </tbody>
+                              </table>
+
+                    </div>
+            </div>
+
+      </div>
+  </div>
+
+<!---------------------------Start Charts---------------------------------------->
+
+<div class="col-lg-6">
+    <div class="card">
+        <div class="card-body pb-1">
+            <h4 class="header-title">Event Count</h4>
+              <div id="chartdiv" style="height: 200px;"></div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-6">
+    <div class="card">
+        <div class="card-body pb-1">
+            <h4 class="header-title">Capacity</h4>
+            <div id="chartdiv2" style="height: 200px;"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--------------------------Start Volumes--------------------------------->
+
+<div class="col-lg-12">
+    <!-- seo fact area start -->
+      <div class="card">
+            <div class="card-body"
+            <h2 class="header-title">Volumes</h2>
+                  <div class="data-tables datatable-dark">
+                        <table id="dataTable" class="table table-stripped">
+                              <thead class="text-capitalize">
+                                  <tr>
+                                      <th>Name</th>
+                                      <th>DeDupe</th>
+                                      <th>Block_Size</th>
+                                      <th>Online</th>
+                                      <th>Thin</th>
+                                      <th>Encrypt</th>
+                                      <th></th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                     {% for v in volumes %}
+                                      <tr>
+                                          <td>{{v[0]}}</td>
+                                          <td>{{v[1]}}</td>
+                                          <td>{{v[2]}}</td>
+                                          <td>{{v[3]}}</td>
+                                          <td>{{v[4]}}</td>
+                                          <td>{{v[5]}}</td>
+                                          <td></td>
+                                      </tr>
+                                       {% endfor %}
+                                  </tbody>
+                          </table>
+
+                </div>
+        </div>
+
+  </div>
+</div>
+
+
+
+<script>
+  var chartData = {{chartData|safe}};
+  var chartData2 = {{chartData2|safe}};
+</script>
+
+
+
+
+{% endblock %}
